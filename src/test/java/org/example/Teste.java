@@ -25,9 +25,9 @@ public class Teste {
     @Test
     public void testPatineteEletricoComCustoValido() {
         BigDecimal custo = new BigDecimal("50.00");
-        int horasDeUso = 100; // Só a quantidade de horas de uso
+        int horasDeUso = 100;
         PatineteEletrico patinete = new PatineteEletrico(custo, horasDeUso);
-        BigDecimal custoEsperado = custo.multiply(BigDecimal.valueOf(horasDeUso)); // Cálculo correto com horas
+        BigDecimal custoEsperado = custo.multiply(BigDecimal.valueOf(horasDeUso));
         assertEquals(custoEsperado, patinete.calculaCustoMensal(), "O custo mensal do patinete elétrico está incorreto");
     }
 
@@ -36,7 +36,7 @@ public class Teste {
         BigDecimal custo = new BigDecimal("-50.00");
         int horasDeUso = 100;
         PatineteEletrico patinete = new PatineteEletrico(custo, horasDeUso);
-        // Se o custo for negativo, o teste espera que o valor final seja zero
+
         assertEquals(BigDecimal.ZERO, patinete.calculaCustoMensal(),
                 "O custo mensal do patinete com custo negativo deve ser corrigido para zero");
     }
@@ -105,7 +105,6 @@ public class Teste {
 
         BicicletaCompartilhada bicicleta = new BicicletaCompartilhada(custoManutencaoPorUnidade, numeroDeBicicletas);
 
-        // Aqui, o custo será negativo por causa do custo de manutenção, então é esperado que seja zero
         BigDecimal custoEsperado = custoManutencaoPorUnidade.multiply(BigDecimal.valueOf(numeroDeBicicletas));
         assertEquals(BigDecimal.ZERO, bicicleta.calculaCustoMensal(), "O custo mensal da bicicleta com custo de manutenção negativo deve ser igual ao custo fixo.");
     }
@@ -113,11 +112,11 @@ public class Teste {
     @Test
     public void testBicicletaCompartilhadaComNumeroDeBicicletasNegativo() {
         BigDecimal custoManutencaoPorUnidade = new BigDecimal("20.00");
-        int numeroDeBicicletas = -100; // Número negativo de bicicletas
+        int numeroDeBicicletas = -100;
 
         BicicletaCompartilhada bicicleta = new BicicletaCompartilhada(custoManutencaoPorUnidade, numeroDeBicicletas);
 
-        BigDecimal custoEsperado = custoManutencaoPorUnidade.multiply(BigDecimal.valueOf(0)); // Ajustando o número para 0
+        BigDecimal custoEsperado = custoManutencaoPorUnidade.multiply(BigDecimal.valueOf(0));
         assertEquals(custoEsperado, bicicleta.calculaCustoMensal(), "O custo mensal da bicicleta com número de bicicletas negativo deve ser igual ao custo fixo.");
     }
 
@@ -147,7 +146,7 @@ public class Teste {
     @Test
     public void testBicicletaCompartilhadaComZeroBicicletas() {
         BigDecimal custoManutencaoPorUnidade = new BigDecimal("20.00");
-        int numeroDeBicicletas = 0; // Número de bicicletas zero
+        int numeroDeBicicletas = 0;
 
         BicicletaCompartilhada bicicleta = new BicicletaCompartilhada(custoManutencaoPorUnidade, numeroDeBicicletas);
 

@@ -43,7 +43,6 @@ public class Main {
                     custo = scanner.nextBigDecimal();
                     System.out.print("Digite o número de horas de uso do patinete: ");
                     horasDeUso = scanner.nextInt();
-                    // Agora estamos criando o PatineteElétrico com custo e horas de uso
                     PatineteEletrico patinete = new PatineteEletrico(custo, horasDeUso);
                     System.out.println("Custo mensal do patinete elétrico: " + patinete.calculaCustoMensal());
                     break;
