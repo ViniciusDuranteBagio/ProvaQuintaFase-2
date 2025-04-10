@@ -1,10 +1,10 @@
 package classes.entities;
 
-public class Bicicletas extends Veiculo{
+public class Bicicleta extends Veiculo{
     private int qtdBiciletas;
     private double manutencaoMensal;
 
-    public Bicicletas(String name, int qtdBiciletas, double manutencaoMensal) {
+    public Bicicleta(String name, int qtdBiciletas, double manutencaoMensal) {
         super(name);
         this.qtdBiciletas = qtdBiciletas;
         this.manutencaoMensal = manutencaoMensal;
